@@ -16,16 +16,16 @@ public class ContactController {
 	
 	@Autowired
 	private ContactServiceI contactServiceI;
-	@PostMapping (value="saveContact" , consumes="/APPLICATION/JSON")
+	@PostMapping (value="saveContact" , consumes="APPLICATION/JSON")
 	public ResponseEntity<String> saveContact(@RequestBody Contact contact){
 		boolean save = contactServiceI.SaveContact(contact);
 
 		if(save==true) {
 			String msg="ypur contact save successfully";
-			return new ResponseEntity <String> (HttpStatus.OK) ;
+			return new ResponseEntity <String> ( msg, HttpStatus.OK) ;
 			}
 		else {
 			String msg= "your contact not save successfully";
-			return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<String>(msg, HttpStatus.BAD_REQUEST);
 			}}}
 		

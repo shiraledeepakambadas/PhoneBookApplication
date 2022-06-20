@@ -30,10 +30,10 @@ public class Contact {
 	@Column(name="CONTACT_ACTIVESW")
 	private Character activeSw;
    
-	@Column(name="CONTACT_CREATEDATE")
+	@Column(name="CONTACT_CREATEDATE" ,updatable=false) 
    private LocalDate createDate;
 	 
-	@Column(name="CONTACT_UPDATEDATE")
+	@Column(name="CONTACT_UPDATEDATE" , insertable=true)
    private LocalDate updateDate;
 
 	public Integer getContactId() {
@@ -98,6 +98,9 @@ public class Contact {
 				+ ", contactEmail=" + contactEmail + ", activeSw=" + activeSw + ", createDate=" + createDate
 				+ ", updateDate=" + updateDate + "]";
 	}
+	
+
+	}
    
  
-}
+
